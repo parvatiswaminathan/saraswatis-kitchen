@@ -57,7 +57,9 @@
     .meta span{background:rgba(6,77,54,.08); color:var(--green); border-radius:999px; padding:5px 8px; font-weight:900; font-size:11px}
     .product-body p{margin:0; line-height:1.5; color:rgba(59,32,26,.8); font-size:13.5px}
     .desc-highlight{color:var(--gold); font-family:Georgia,"Times New Roman",serif; font-style:italic; font-weight:900; background:rgba(201,149,47,.12); padding:1px 5px; border-radius:999px; white-space:nowrap}
-    .desc-special{color:var(--green); font-family:Georgia,"Times New Roman",serif; font-style:italic; font-weight:900; background:rgba(6,77,54,.10); padding:1px 5px; border-radius:999px; white-space:nowrap}
+    .desc-special{color:#9b3b00; font-family:Georgia,"Times New Roman",serif; font-style:italic; font-weight:900; background:#ffe0b8; border:1px solid rgba(155,59,0,.22); padding:2px 7px; border-radius:999px; white-space:nowrap; box-shadow:0 4px 12px rgba(201,149,47,.18)}
+    .price-list{display:grid; gap:5px; margin:2px 0 4px}
+    .price-line{display:inline-flex; width:max-content; max-width:100%; background:rgba(201,149,47,.12); border:1px solid rgba(201,149,47,.22); color:#6b4316; border-radius:999px; padding:5px 9px; font-size:12px; font-weight:900}
     .product-actions{display:flex; gap:8px; flex-wrap:wrap; margin-top:auto; padding-top:4px}
     .product-actions .whatsapp{padding:9px 10px; font-size:13px}
     .view-link{border:none; background:transparent; color:var(--green); font-weight:900; cursor:pointer; padding:7px 0; text-decoration:underline; text-underline-offset:3px; font-size:12px}
@@ -77,9 +79,19 @@
     .social-card{background:#fffaf3; border:1px solid rgba(59,32,26,.12); border-radius:22px; padding:14px; text-align:center}
     .social-card img{width:126px; height:126px; object-fit:contain; margin:4px auto 8px; display:block}
     .social-card a{color:var(--green); font-weight:900; word-break:break-word; font-size:13px}
-    .certs{display:flex; gap:14px; flex-wrap:wrap; align-items:center; margin-top:18px}
-    .certs img{max-width:260px; height:auto}
-    .gst-badge{background:#fffaf3; border:2px solid var(--green); border-radius:20px; padding:16px 18px; color:var(--green); font-weight:900}
+    .social-icon-link{display:inline-flex; align-items:center; justify-content:center; width:42px; height:42px; border-radius:50%; background:rgba(6,77,54,.08); color:var(--green); margin-top:4px}
+    .social-icon-link svg{width:24px; height:24px}
+    .social-row{display:flex; flex-wrap:wrap; gap:12px; align-items:center}
+    .social-row a{display:inline-flex; align-items:center; gap:7px; color:var(--green); font-weight:900; text-decoration:none}
+    .social-row svg{width:22px; height:22px}
+    .sr-only{position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; border:0}
+    .certs{display:flex; gap:14px; flex-wrap:wrap; align-items:stretch; margin-top:18px}
+    .fssai-card{display:flex; align-items:center; gap:12px; background:#fffaf3; border:1.5px solid rgba(6,77,54,.18); border-radius:20px; padding:12px 14px}
+    .fssai-card img{width:74px; height:auto; object-fit:contain}
+    .fssai-card strong,.gst-badge strong{display:block; color:var(--green); font-size:14px; letter-spacing:.02em}
+    .fssai-card span,.gst-badge span{display:block; color:rgba(59,32,26,.70); font-size:12px; font-weight:800; text-transform:uppercase; letter-spacing:.08em}
+    .gst-badge{background:#fffaf3; border:2px solid var(--green); border-radius:20px; padding:14px 18px; color:var(--green); font-weight:900; min-width:190px}
+    .gst-badge strong{font-size:16px}
     footer{padding:28px 0; color:#fffaf3; background:var(--green); margin-top:50px}
     footer .wrap{display:flex; justify-content:space-between; flex-wrap:wrap; gap:10px; font-weight:700; font-size:14px}
     .floating-wa{position:fixed; right:18px; bottom:18px; z-index:50; width:60px; height:60px; border-radius:50%; display:flex; align-items:center; justify-content:center; background:#25D366; color:#06311e; box-shadow:0 16px 36px rgba(0,0,0,.22)}
@@ -171,14 +183,16 @@
             <div class="contact-copy">
               <p><strong>Contact Person:</strong> Parvati Swaminathan, Founder</p>
               <p><strong>Saraswati's Kitchen</strong> is a unit of White Beans Innovations.</p>
-              <p><strong>Phone / WhatsApp:</strong> <a href="https://wa.me/918588825220" target="_blank" rel="noopener">8588825220</a></p>
+              <p><strong>Phone / WhatsApp:</strong> <a href="https://wa.me/918588825220" target="_blank" rel="noopener">8588825220</a> / <a href="tel:+919711547605">9711547605</a></p>
               <p class="distributor-note">Distributor enquiries are welcome.</p>
-              <p><strong>Instagram:</strong> <a href="https://www.instagram.com/saraswatis.kitchen?igsh=OTh3OXY5ODN5a3V4" target="_blank" rel="noopener">@saraswatis.kitchen</a></p>
-              <p><strong>Facebook:</strong> <a href="https://www.facebook.com/share/1QmvS9EoXv/" target="_blank" rel="noopener">Saraswati's Kitchen on Facebook</a></p>
+              <p class="social-row"><a href="https://www.instagram.com/saraswatis.kitchen?igsh=OTh3OXY5ODN5a3V4" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><path fill="currentColor" d="M7.8 2h8.4A5.8 5.8 0 0 1 22 7.8v8.4A5.8 5.8 0 0 1 16.2 22H7.8A5.8 5.8 0 0 1 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2Zm-.2 2A3.6 3.6 0 0 0 4 7.6v8.8A3.6 3.6 0 0 0 7.6 20h8.8a3.6 3.6 0 0 0 3.6-3.6V7.6A3.6 3.6 0 0 0 16.4 4H7.6Zm8.9 1.7a1.1 1.1 0 1 1 0 2.2 1.1 1.1 0 0 1 0-2.2ZM12 7.2A4.8 4.8 0 1 1 12 16.8 4.8 4.8 0 0 1 12 7.2Zm0 2A2.8 2.8 0 1 0 12 14.8 2.8 2.8 0 0 0 12 9.2Z"/></svg><span>@saraswatis.kitchen</span></a><a href="https://www.facebook.com/share/1QmvS9EoXv/" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><path fill="currentColor" d="M22 12.06C22 6.49 17.52 2 12 2S2 6.49 2 12.06c0 5.03 3.66 9.2 8.44 9.94v-7.03H7.9v-2.91h2.54V9.84c0-2.52 1.49-3.91 3.77-3.91 1.09 0 2.23.2 2.23.2v2.46h-1.26c-1.24 0-1.63.78-1.63 1.57v1.9h2.78l-.44 2.91h-2.34V22C18.34 21.26 22 17.09 22 12.06Z"/></svg><span>Saraswati's Kitchen</span></a></p>
             </div>
             <div class="certs">
-              <img src="assets/brand/fssai-badge.png" alt="FSSAI license 12725055000859" />
-              <div class="gst-badge">GST<br>09ARNPS6687D1Z0</div>
+              <div class="fssai-card">
+                <img src="assets/brand/fssai-logo.png" alt="FSSAI logo" />
+                <div><span>FSSAI Licensed</span><strong>Lic. No. 12725055000859</strong></div>
+              </div>
+              <div class="gst-badge"><span>GSTIN</span><strong>09ARNPS6687D1Z0</strong></div>
             </div>
           </div>
           <div>
@@ -186,11 +200,11 @@
             <div class="socials">
               <div class="social-card">
                 <img src="assets/qr/instagram.png" alt="Instagram QR code" />
-                <a href="https://www.instagram.com/saraswatis.kitchen?igsh=OTh3OXY5ODN5a3V4" target="_blank" rel="noopener">Instagram</a>
+                <a class="social-icon-link" href="https://www.instagram.com/saraswatis.kitchen?igsh=OTh3OXY5ODN5a3V4" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><path fill="currentColor" d="M7.8 2h8.4A5.8 5.8 0 0 1 22 7.8v8.4A5.8 5.8 0 0 1 16.2 22H7.8A5.8 5.8 0 0 1 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2Zm-.2 2A3.6 3.6 0 0 0 4 7.6v8.8A3.6 3.6 0 0 0 7.6 20h8.8a3.6 3.6 0 0 0 3.6-3.6V7.6A3.6 3.6 0 0 0 16.4 4H7.6Zm8.9 1.7a1.1 1.1 0 1 1 0 2.2 1.1 1.1 0 0 1 0-2.2ZM12 7.2A4.8 4.8 0 1 1 12 16.8 4.8 4.8 0 0 1 12 7.2Zm0 2A2.8 2.8 0 1 0 12 14.8 2.8 2.8 0 0 0 12 9.2Z"/></svg><span class="sr-only">Instagram</span></a>
               </div>
               <div class="social-card">
                 <img src="assets/qr/facebook.png" alt="Facebook QR code" />
-                <a href="https://www.facebook.com/share/1QmvS9EoXv/" target="_blank" rel="noopener">Facebook</a>
+                <a class="social-icon-link" href="https://www.facebook.com/share/1QmvS9EoXv/" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><path fill="currentColor" d="M22 12.06C22 6.49 17.52 2 12 2S2 6.49 2 12.06c0 5.03 3.66 9.2 8.44 9.94v-7.03H7.9v-2.91h2.54V9.84c0-2.52 1.49-3.91 3.77-3.91 1.09 0 2.23.2 2.23.2v2.46h-1.26c-1.24 0-1.63.78-1.63 1.57v1.9h2.78l-.44 2.91h-2.34V22C18.34 21.26 22 17.09 22 12.06Z"/></svg><span class="sr-only">Facebook</span></a>
               </div>
               <div class="social-card">
                 <img src="assets/qr/whatsapp.png" alt="WhatsApp QR code" />
@@ -225,91 +239,132 @@
 const products = [
   {
     "title": "Sprouted Ragi Dosa Premix",
-    "category": "Wholesome Millet Premixes",
+    "category": "Wholesome Millet Premixes (Gluten Free)",
     "pack": "200 g / 500 g",
     "image": "assets/products/sprouted-ragi-dosa-premix.jpg",
     "tag": "Best Seller",
-    "description": "Best Seller - sprouted ragi goodness for quick, wholesome dosas."
+    "description": "Best Seller - sprouted ragi goodness for quick, wholesome dosas.",
+    "prices": [
+      "200 g: MRP ₹150 | Selling ₹120",
+      "500 g: MRP ₹375 | Selling ₹280"
+    ]
   },
   {
     "title": "Rolled Oats Dosa Premix",
-    "category": "Wholesome Millet Premixes",
+    "category": "Wholesome Millet Premixes (Gluten Free)",
     "pack": "200 g / 500 g",
     "image": "assets/products/rolled-oats-dosa-premix.jpg",
     "tag": "Best Seller",
-    "description": "Best Seller - hearty rolled oats premix for light, crisp dosas."
+    "description": "Best Seller - hearty rolled oats premix for light, crisp dosas.",
+    "prices": [
+      "200 g: MRP ₹150 | Selling ₹120",
+      "500 g: MRP ₹375 | Selling ₹280"
+    ]
   },
   {
     "title": "Soyabean Dosa Premix",
-    "category": "Wholesome Millet Premixes",
+    "category": "Wholesome Millet Premixes (Gluten Free)",
     "pack": "200 g / 500 g",
     "image": "assets/products/soyabean-dosa-premix.jpg",
     "tag": "Protein-Rich",
-    "description": "Unbelievably tasty and protein-rich, made for everyday dosa cravings."
+    "description": "Unbelievably tasty and protein-rich, made for everyday dosa cravings.",
+    "prices": [
+      "200 g: MRP ₹150 | Selling ₹120",
+      "500 g: MRP ₹375 | Selling ₹280"
+    ]
   },
   {
     "title": "Jowar Dosa Premix",
-    "category": "Wholesome Millet Premixes",
+    "category": "Wholesome Millet Premixes (Gluten Free)",
     "pack": "200 g / 500 g",
     "image": "assets/products/jowar-dosa-premix.jpg",
     "tag": "Millet Blend",
-    "description": "Nutritious jowar millet blend for easy, healthy dosas."
+    "description": "Nutritious jowar millet blend for easy, healthy dosas.",
+    "prices": [
+      "200 g: MRP ₹150 | Selling ₹120",
+      "500 g: MRP ₹375 | Selling ₹280"
+    ]
   },
   {
     "title": "Adai Multi Grain Premix",
-    "category": "Wholesome Millet Premixes",
+    "category": "Wholesome Millet Premixes (Gluten Free)",
     "pack": "200 g / 500 g",
     "image": "assets/products/adai-multi-grain-premix.jpg",
     "tag": "Must Try",
-    "description": "Saraswati's special - a hearty multi-grain premix and a must try."
+    "description": "Saraswati's special - a hearty multi-grain premix and a must try.",
+    "prices": [
+      "200 g: MRP ₹150 | Selling ₹120",
+      "500 g: MRP ₹375 | Selling ₹280"
+    ]
   },
   {
     "title": "Bajra Dosa Premix",
-    "category": "Wholesome Millet Premixes",
+    "category": "Wholesome Millet Premixes (Gluten Free)",
     "pack": "200 g / 500 g",
     "image": "assets/products/bajra-dosa-premix.jpg",
     "tag": "Bajra Goodness",
-    "description": "Nutritious bajra premix for crisp, comforting homemade dosas."
+    "description": "Nutritious bajra premix for crisp, comforting homemade dosas.",
+    "prices": [
+      "200 g: MRP ₹150 | Selling ₹120",
+      "500 g: MRP ₹375 | Selling ₹280"
+    ]
   },
   {
     "title": "Plain Dosa Premix",
-    "category": "Wholesome Millet Premixes",
+    "category": "Wholesome Millet Premixes (Gluten Free)",
     "pack": "200 g / 500 g",
     "image": "assets/products/plain-dosa-premix.jpg",
     "tag": "Instant Mix",
-    "description": "Make delicious crisp dosas in minutes - simple, quick and homely."
+    "description": "Make delicious crisp dosas in minutes - simple, quick and homely.",
+    "prices": [
+      "200 g: MRP ₹150 | Selling ₹120",
+      "500 g: MRP ₹375 | Selling ₹280"
+    ]
   },
   {
     "title": "Plain Idli Premix",
-    "category": "Wholesome Millet Premixes",
+    "category": "Wholesome Millet Premixes (Gluten Free)",
     "pack": "200 g / 500 g",
     "image": "assets/products/plain-idli-premix.jpg",
     "tag": "Soft & Fluffy",
-    "description": "Quick and easy premix for soft, fluffy homemade idlis."
+    "description": "Quick and easy premix for soft, fluffy homemade idlis.",
+    "prices": [
+      "200 g: MRP ₹150 | Selling ₹120",
+      "500 g: MRP ₹375 | Selling ₹280"
+    ]
   },
   {
     "title": "Millet Pancake Chocolate",
-    "category": "Millet Pancakes",
-    "pack": "200 g / 500 g",
+    "category": "Millet Pancakes (Gluten Free)",
+    "pack": "200 g",
     "image": "assets/products/millet-pancake-chocolate.jpg",
     "tag": "Chocolate",
-    "description": "Oats and ragi goodness in a delicious chocolate pancake mix."
+    "description": "Oats and ragi goodness in a delicious chocolate pancake mix.",
+    "prices": [
+      "200 g: MRP ₹180 | Selling ₹150"
+    ]
   },
   {
     "title": "Millet Pancake Valilla",
-    "category": "Millet Pancakes",
-    "pack": "200 g / 500 g",
+    "category": "Millet Pancakes (Gluten Free)",
+    "pack": "200 g",
     "image": "assets/products/millet-pancake-valilla.jpg",
     "tag": "Vanilla",
-    "description": "Oats and jowar goodness in a soft, wholesome vanilla pancake mix."
+    "description": "Oats and jowar goodness in a soft, wholesome vanilla pancake mix.",
+    "prices": [
+      "200 g: MRP ₹180 | Selling ₹150"
+    ]
   },
   {
     "title": "Millet Pancake Mango",
-    "category": "Millet Pancakes",
-    "pack": "200 g / 500 g",
+    "category": "Millet Pancakes (Gluten Free)",
+    "pack": "200 g",
     "image": "assets/products/millet-pancake-mango.jpg",
     "tag": "Mango",
-    "description": "Our first mango pancake mix - made with sprouted millets."
+    "description": "Our first mango pancake mix - made with sprouted millets.",
+    "prices": [
+      "200 g: MRP ₹180 | Selling ₹150"
+    ]
   },
   {
     "title": "Khapali Ata (Emmer Wheat)",
@@ -317,7 +372,11 @@ const products = [
     "pack": "1 kg / 5 kg",
     "image": "assets/products/khapali-ata-emmer-wheat.jpg",
     "tag": "Ancient Grain",
-    "description": "Stone-ground ancient emmer wheat flour for soft, nutritious rotis."
+    "description": "Stone-ground ancient emmer wheat flour for soft, nutritious rotis.",
+    "prices": [
+      "1 kg: MRP ₹250 | Selling ₹200",
+      "5 kg: MRP ₹1200 | Selling ₹950"
+    ]
   },
   {
     "title": "10 Grains Khapali-Millet Ata",
@@ -325,7 +384,11 @@ const products = [
     "pack": "1 kg / 5 kg",
     "image": "assets/products/10-grains-khapali-millet-ata.jpg",
     "tag": "Multi-Grain",
-    "description": "Khapali blended with nutrient-rich millets and supergrains."
+    "description": "Khapali blended with nutrient-rich millets and supergrains.",
+    "prices": [
+      "1 kg: MRP ₹250 | Selling ₹200",
+      "5 kg: MRP ₹1200 | Selling ₹950"
+    ]
   },
   {
     "title": "Nuts & Seeds Chocolate Milk Blend",
@@ -333,7 +396,10 @@ const products = [
     "pack": "200 g",
     "image": "assets/products/nuts-seeds-chocolate-milk-blend.jpg",
     "tag": "Nutrition-Packed",
-    "description": "Packed with REAL dry fruits, nuts and seeds - no compromise on daily nutrition-packed goodness."
+    "description": "Packed with REAL dry fruits, nuts and seeds - no compromise on daily nutrition-packed goodness.",
+    "prices": [
+      "200 g: MRP ₹300 | Selling ₹250"
+    ]
   },
   {
     "title": "Channa and Jau Sattu Drink",
@@ -341,7 +407,10 @@ const products = [
     "pack": "250 g",
     "image": "assets/products/channa-and-jau-sattu-drink.jpg",
     "tag": "Summer Cooler",
-    "description": "Summer coolers, chill your ❤️."
+    "description": "Summer coolers, chill your ❤️.",
+    "prices": [
+      "250 g: MRP ₹120 | Selling ₹100"
+    ]
   },
   {
     "title": "Sambar Powder",
@@ -349,7 +418,10 @@ const products = [
     "pack": "100 g",
     "image": "assets/products/sambar-powder.jpg",
     "tag": "Freshly Ground",
-    "description": "Traditional recipe, bold spice blend and freshly ground aroma."
+    "description": "Traditional recipe, bold spice blend and freshly ground aroma.",
+    "prices": [
+      "100 g: MRP ₹120 | Selling ₹100"
+    ]
   },
   {
     "title": "Idli/Dosa Podi",
@@ -357,7 +429,10 @@ const products = [
     "pack": "100 g",
     "image": "assets/products/idli-dosa-podi.jpg",
     "tag": "Spice Blend",
-    "description": "Traditional South Indian spice blend for idli, dosa and rice."
+    "description": "Traditional South Indian spice blend for idli, dosa and rice.",
+    "prices": [
+      "100 g: MRP ₹120 | Selling ₹100"
+    ]
   },
   {
     "title": "Diet Mix (Mixture)",
@@ -365,31 +440,43 @@ const products = [
     "pack": "165 g",
     "image": "assets/products/diet-mix-mixture.jpg",
     "tag": "Guilt-Free Snacking",
-    "description": "Packed with real dry fruits and peanuts - for your guilt-free snacking."
+    "description": "Packed with real dry fruits and peanuts - for your guilt-free snacking.",
+    "prices": [
+      "165 g: MRP ₹120 | Selling ₹100"
+    ]
   },
   {
     "title": "Laddu Varieties",
     "category": "Traditional Homemade Snacks & Sweets",
-    "pack": "250 g / 500 g",
+    "pack": "Please enquire",
     "image": "assets/products/laddu-varieties.jpg",
     "tag": "Homemade Sweets",
-    "description": "Besan-dryfruit, Atta-Gond, Chana-Makhana-Dryfruit, Nuts&Seeds, Methi-Dryfruit, Khoya-Nariyal-Dryfruit."
+    "description": "Besan-dryfruit, Atta-Gond, Chana-Makhana-Dryfruit, Nuts&Seeds, Methi-Dryfruit, Khoya-Nariyal-Dryfruit.",
+    "prices": [
+      "Please enquire for price"
+    ]
   },
   {
     "title": "Mathri Varieties",
     "category": "Traditional Homemade Snacks & Sweets",
-    "pack": "250 g / 500 g",
+    "pack": "500 g",
     "image": "assets/products/mathri-varieties.jpg",
     "tag": "Chai-Time Snack",
-    "description": "India favourite chai time snack - Atta, Maida-Suji, beetroot-spinch (red, green marbling)."
+    "description": "India's favorite chai time snack - Atta, Maida-Suji, beetroot-spinach (red, green marbling).",
+    "prices": [
+      "500 g: MRP ₹250 | Selling ₹220"
+    ]
   },
   {
     "title": "Crispy Namakpare",
     "category": "Traditional Homemade Snacks & Sweets",
-    "pack": "250 g / 500 g",
+    "pack": "500 g",
     "image": "assets/products/crispy-namakpare.jpg",
     "tag": "Crispy Snack",
-    "description": "Traditional homemade crispy namakpare for anytime snacking."
+    "description": "Traditional homemade crispy namakpare for anytime snacking.",
+    "prices": [
+      "500 g: MRP ₹250 | Selling ₹220"
+    ]
   }
 ];
 const phone = "918588825220";
@@ -411,7 +498,8 @@ function highlightDescription(text) {
     .replace(/Saraswati’s special/g, '<span class="desc-special">Saraswati’s special</span>');
 }
 function orderLink(product) {
-  const message = `Hello Parvati ji, I want to enquire about: ${product.title}. Available pack: ${product.pack}. Please confirm price and availability.`;
+  const priceText = product.prices ? ` Price details: ${product.prices.join(' / ')}.` : '';
+  const message = `Hello Parvati ji, I want to enquire about: ${product.title}. Available pack: ${product.pack}.${priceText} Please confirm availability.`;
   return `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
 }
 function renderFilters() {
@@ -433,6 +521,7 @@ function renderProducts() {
         <h4>${product.title}</h4>
         <div class="meta"><span>${product.pack}</span><span>${product.tag}</span></div>
         <p>${highlightDescription(product.description)}</p>
+        ${product.prices ? `<div class="price-list">${product.prices.map(price => `<span class="price-line">${price}</span>`).join('')}</div>` : ''}
         <div class="product-actions">
           <a class="whatsapp" href="${orderLink(product)}" target="_blank" rel="noopener"><span class="wa-icon">${whatsappIcon}</span> Enquire</a>
           <button class="view-link" type="button" data-image="${product.image}" data-title="${product.title}">View full image</button>
