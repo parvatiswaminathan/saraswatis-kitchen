@@ -35,7 +35,7 @@
     .outline-btn{display:inline-flex; align-items:center; justify-content:center; color:var(--green); font-weight:900; border:1.5px solid rgba(6,77,54,.24); padding:11px 15px; border-radius:999px; background:rgba(255,250,243,.65)}
     .hero-visual{background:linear-gradient(160deg, rgba(6,77,54,.12), rgba(201,149,47,.10)); display:flex; flex-direction:column; align-items:center; justify-content:flex-start; padding:14px 24px 72px; position:relative}
     .hero-visual::after{content:""; position:absolute; inset:auto -90px -90px auto; width:260px; height:260px; background:rgba(201,149,47,.12); border-radius:50%}
-    .hero-visual img{width:min(360px,82%); max-height:420px; object-fit:contain; border-radius:28px; border:8px solid rgba(255,250,243,.92); box-shadow:0 28px 70px rgba(0,0,0,.16); background:#fff; position:relative; z-index:2; margin-top:0}
+    .hero-visual img{width:min(540px,98%); max-height:560px; object-fit:contain; border-radius:28px; border:8px solid rgba(255,250,243,.92); box-shadow:0 28px 70px rgba(0,0,0,.16); background:#fff; position:relative; z-index:2; margin-top:0}
     .stats{display:grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap:12px; margin-top:26px; max-width:440px}
     .stat{background:rgba(255,250,243,.72); border:1px solid rgba(59,32,26,.1); border-radius:18px; padding:14px}
     .stat strong{display:block; color:var(--green); font-size:25px}
@@ -55,9 +55,15 @@
     .product-body h4{margin:0; color:var(--green); font-size:18px; line-height:1.14}
     .meta{display:flex; flex-wrap:wrap; gap:7px}
     .meta span{background:rgba(6,77,54,.08); color:var(--green); border-radius:999px; padding:5px 8px; font-weight:900; font-size:11px}
+    .price-row{display:flex; flex-wrap:wrap; gap:8px; align-items:center; margin-top:2px}
+    .mrp-pill{display:inline-flex; align-items:center; gap:6px; background:linear-gradient(180deg, #f7e9d2 0%, #f2ddbf 100%); color:#7d4d21; border:1.5px solid #d9b78a; border-radius:999px; padding:7px 12px; font-weight:1000; font-size:13px; box-shadow:inset 0 1px 0 rgba(255,255,255,.75), 0 4px 10px rgba(125,77,33,.08)}
+    .mrp-pill strong{font-size:14px; color:#7d4d21}
+    .desc-special{display:inline-block; color:#a64f19; font-family:Georgia,"Times New Roman",serif; font-style:italic; font-weight:1000; background:linear-gradient(180deg, #f7e9d2 0%, #f2ddbf 100%); border:1.5px solid #d9b78a; border-radius:999px; padding:3px 12px; box-shadow:inset 0 1px 0 rgba(255,255,255,.75), 0 4px 10px rgba(125,77,33,.08); white-space:nowrap; animation:specialBlink 1.15s ease-in-out infinite}
+    @keyframes specialBlink{0%,100%{opacity:1; transform:scale(1); box-shadow:inset 0 1px 0 rgba(255,255,255,.75), 0 4px 10px rgba(125,77,33,.08)}50%{opacity:.42; transform:scale(1.04); box-shadow:inset 0 1px 0 rgba(255,255,255,.75), 0 0 0 3px rgba(214,126,47,.10), 0 8px 20px rgba(214,126,47,.22)}}
+
     .product-body p{margin:0; line-height:1.5; color:rgba(59,32,26,.8); font-size:13.5px}
     .desc-highlight{color:var(--gold); font-family:Georgia,"Times New Roman",serif; font-style:italic; font-weight:900; background:rgba(201,149,47,.12); padding:1px 5px; border-radius:999px; white-space:nowrap}
-    .desc-special{color:var(--green); font-family:Georgia,"Times New Roman",serif; font-style:italic; font-weight:900; background:rgba(6,77,54,.10); padding:1px 5px; border-radius:999px; white-space:nowrap}
+    
     .product-actions{display:flex; gap:8px; flex-wrap:wrap; margin-top:auto; padding-top:4px}
     .product-actions .whatsapp{padding:9px 10px; font-size:13px}
     .view-link{border:none; background:transparent; color:var(--green); font-weight:900; cursor:pointer; padding:7px 0; text-decoration:underline; text-underline-offset:3px; font-size:12px}
@@ -77,6 +83,25 @@
     .social-card{background:#fffaf3; border:1px solid rgba(59,32,26,.12); border-radius:22px; padding:14px; text-align:center}
     .social-card img{width:126px; height:126px; object-fit:contain; margin:4px auto 8px; display:block}
     .social-card a{color:var(--green); font-weight:900; word-break:break-word; font-size:13px}
+
+    .contact-item-icon,.social-logo-link{display:inline-flex; align-items:center; justify-content:center; vertical-align:middle}
+    .contact-item-icon svg{width:18px; height:18px; margin-right:8px; color:var(--green)}
+    .social-logo-link{width:44px; height:44px; border-radius:50%; background:rgba(6,77,54,.08); border:1.5px solid rgba(6,77,54,.15); transition:transform .2s ease, box-shadow .2s ease, background .2s ease}
+    .social-logo-link svg{width:24px; height:24px; color:var(--green)}
+    .social-logo-link:hover{transform:translateY(-2px); box-shadow:0 8px 18px rgba(6,77,54,.12); background:rgba(6,77,54,.12)}
+
+    .contact-link-row{display:flex; align-items:center; gap:12px; flex-wrap:wrap}
+    .contact-link-row .social-logo-link{width:42px; height:42px}
+    .contact-link-row .email-address{color:var(--green); font-weight:900; text-decoration:underline; text-underline-offset:3px; word-break:break-word}
+
+    .social-text-row{display:flex; align-items:center; gap:10px; flex-wrap:wrap; margin-top:8px}
+    .social-text-link{display:inline-flex; align-items:center; justify-content:center; width:22px; height:22px; color:var(--green); text-decoration:none}
+    .social-text-link svg{width:22px; height:22px}
+    .social-label-chip{display:inline-flex; align-items:center; min-height:26px; padding:3px 7px; background:rgba(59,59,59,.18); color:#333; font-weight:900; font-size:15px; line-height:1.2; text-decoration:none!important; border-radius:0}
+    .social-label-chip:hover{background:rgba(6,77,54,.14); color:var(--green)}
+
+
+
     .certs{display:flex; gap:14px; flex-wrap:wrap; align-items:center; margin-top:18px}
     .certs img{max-width:260px; height:auto}
     .gst-badge{background:#fffaf3; border:2px solid var(--green); border-radius:20px; padding:16px 18px; color:var(--green); font-weight:900}
@@ -99,6 +124,12 @@
   </style>
 </head>
 <body>
+<svg xmlns="http://www.w3.org/2000/svg" style="position:absolute;width:0;height:0;overflow:hidden" aria-hidden="true" focusable="false">
+  <symbol id="icon-instagram" viewBox="0 0 24 24"><path fill="currentColor" d="M7.75 2h8.5A5.75 5.75 0 0 1 22 7.75v8.5A5.75 5.75 0 0 1 16.25 22h-8.5A5.75 5.75 0 0 1 2 16.25v-8.5A5.75 5.75 0 0 1 7.75 2Zm0 1.8A3.95 3.95 0 0 0 3.8 7.75v8.5a3.95 3.95 0 0 0 3.95 3.95h8.5a3.95 3.95 0 0 0 3.95-3.95v-8.5a3.95 3.95 0 0 0-3.95-3.95h-8.5Zm8.95 1.35a1.1 1.1 0 1 1 0 2.2 1.1 1.1 0 0 1 0-2.2ZM12 6.35A5.65 5.65 0 1 1 6.35 12 5.66 5.66 0 0 1 12 6.35Zm0 1.8A3.85 3.85 0 1 0 15.85 12 3.86 3.86 0 0 0 12 8.15Z"/></symbol>
+  <symbol id="icon-facebook" viewBox="0 0 24 24"><path fill="currentColor" d="M13.5 22v-8h2.8l.42-3.25H13.5V8.67c0-.94.26-1.57 1.6-1.57h1.72V4.2A23.1 23.1 0 0 0 14.3 4c-2.5 0-4.2 1.52-4.2 4.32v2.43H7.3V14h2.8v8h3.4Z"/></symbol>
+  <symbol id="icon-email" viewBox="0 0 24 24"><path fill="currentColor" d="M3 5.25A2.25 2.25 0 0 1 5.25 3h13.5A2.25 2.25 0 0 1 21 5.25v13.5A2.25 2.25 0 0 1 18.75 21H5.25A2.25 2.25 0 0 1 3 18.75V5.25Zm1.8.38v.18l7.2 5.62 7.2-5.62v-.18H4.8Zm14.4 2.46-6.65 5.18a.9.9 0 0 1-1.1 0L4.8 8.09v10.66c0 .25.2.45.45.45h13.5c.25 0 .45-.2.45-.45V8.09Z"/></symbol>
+</svg>
+
 <header class="topbar">
   <div class="wrap nav">
     <a class="brand" href="#top" aria-label="Saraswati's Kitchen home">
@@ -178,8 +209,16 @@
               <p><strong>Saraswati's Kitchen</strong> is a unit of White Beans Innovations.</p>
               <p><strong>Phone / WhatsApp:</strong> <a href="https://wa.me/918588825220" target="_blank" rel="noopener">8588825220</a></p>
               <p class="distributor-note">Distributor enquiries are welcome.</p>
-              <p><strong>Instagram:</strong> <a href="https://www.instagram.com/saraswatis.kitchen?igsh=OTh3OXY5ODN5a3V4" target="_blank" rel="noopener">@saraswatis.kitchen</a></p>
-              <p><strong>Facebook:</strong> <a href="https://www.facebook.com/share/1QmvS9EoXv/" target="_blank" rel="noopener">Saraswati's Kitchen on Facebook</a></p>
+              <div class="contact-link-row">
+                <a class="social-logo-link" href="mailto:parvatiswaminathan@gmail.com" aria-label="Email"><svg viewBox="0 0 24 24"><use href="#icon-email"></use></svg></a>
+                <a class="email-address" href="mailto:parvatiswaminathan@gmail.com">parvatiswaminathan@gmail.com</a>
+              </div>
+              <div class="social-text-row">
+                <a class="social-text-link" href="https://www.instagram.com/saraswatis.kitchen?igsh=OTh3OXY5ODN5a3V4" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24"><use href="#icon-instagram"></use></svg></a>
+                <a class="social-label-chip" href="https://www.instagram.com/saraswatis.kitchen?igsh=OTh3OXY5ODN5a3V4" target="_blank" rel="noopener">@saraswatis.kitchen</a>
+                <a class="social-text-link" href="https://www.facebook.com/share/1QmvS9EoXv/" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24"><use href="#icon-facebook"></use></svg></a>
+                <a class="social-label-chip" href="https://www.facebook.com/share/1QmvS9EoXv/" target="_blank" rel="noopener">Saraswati's Kitchen</a>
+              </div>
             </div>
             <div class="certs">
               <img src="assets/brand/fssai-badge.png" alt="FSSAI license 12725055000859" />
@@ -191,11 +230,11 @@
             <div class="socials">
               <div class="social-card">
                 <img src="assets/qr/instagram.png" alt="Instagram QR code" />
-                <a href="https://www.instagram.com/saraswatis.kitchen?igsh=OTh3OXY5ODN5a3V4" target="_blank" rel="noopener">Instagram</a>
+                <a class="social-logo-link" href="https://www.instagram.com/saraswatis.kitchen?igsh=OTh3OXY5ODN5a3V4" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24"><use href="#icon-instagram"></use></svg></a>
               </div>
               <div class="social-card">
                 <img src="assets/qr/facebook.png" alt="Facebook QR code" />
-                <a href="https://www.facebook.com/share/1QmvS9EoXv/" target="_blank" rel="noopener">Facebook</a>
+                <a class="social-logo-link" href="https://www.facebook.com/share/1QmvS9EoXv/" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24"><use href="#icon-facebook"></use></svg></a>
               </div>
               <div class="social-card">
                 <img src="assets/qr/whatsapp.png" alt="WhatsApp QR code" />
@@ -234,7 +273,8 @@ const products = [
     "pack": "200 g / 500 g",
     "image": "assets/products/sprouted-ragi-dosa-premix.jpg",
     "tag": "Best Seller",
-    "description": "Best Seller - sprouted ragi goodness for quick, wholesome dosas."
+    "description": "Best Seller - sprouted ragi goodness for quick, wholesome dosas.",
+    "mrp": "₹150"
   },
   {
     "title": "Rolled Oats Dosa Premix",
@@ -242,7 +282,8 @@ const products = [
     "pack": "200 g / 500 g",
     "image": "assets/products/rolled-oats-dosa-premix.jpg",
     "tag": "Best Seller",
-    "description": "Best Seller - hearty rolled oats premix for light, crisp dosas."
+    "description": "Best Seller - hearty rolled oats premix for light, crisp dosas.",
+    "mrp": "₹150"
   },
   {
     "title": "Soyabean Dosa Premix",
@@ -250,7 +291,8 @@ const products = [
     "pack": "200 g / 500 g",
     "image": "assets/products/soyabean-dosa-premix.jpg",
     "tag": "Protein-Rich",
-    "description": "Unbelievably tasty and protein-rich, made for everyday dosa cravings."
+    "description": "Unbelievably tasty and protein-rich, made for everyday dosa cravings.",
+    "mrp": "₹150"
   },
   {
     "title": "Jowar Dosa Premix",
@@ -258,7 +300,8 @@ const products = [
     "pack": "200 g / 500 g",
     "image": "assets/products/jowar-dosa-premix.jpg",
     "tag": "Millet Blend",
-    "description": "Nutritious jowar millet blend for easy, healthy dosas."
+    "description": "Nutritious jowar millet blend for easy, healthy dosas.",
+    "mrp": "₹150"
   },
   {
     "title": "Adai Multi Grain Premix",
@@ -266,7 +309,8 @@ const products = [
     "pack": "200 g / 500 g",
     "image": "assets/products/adai-multi-grain-premix.jpg",
     "tag": "Must Try",
-    "description": "Saraswati's special - a hearty multi-grain premix and a must try."
+    "description": "Saraswati's special - a hearty multi-grain premix and a must try.",
+    "mrp": "₹150"
   },
   {
     "title": "Bajra Dosa Premix",
@@ -274,7 +318,8 @@ const products = [
     "pack": "200 g / 500 g",
     "image": "assets/products/bajra-dosa-premix.jpg",
     "tag": "Bajra Goodness",
-    "description": "Nutritious bajra premix for crisp, comforting homemade dosas."
+    "description": "Nutritious bajra premix for crisp, comforting homemade dosas.",
+    "mrp": "₹150"
   },
   {
     "title": "Plain Dosa Premix",
@@ -282,7 +327,8 @@ const products = [
     "pack": "200 g / 500 g",
     "image": "assets/products/plain-dosa-premix.jpg",
     "tag": "Instant Mix",
-    "description": "Make delicious crisp dosas in minutes - simple, quick and homely."
+    "description": "Make delicious crisp dosas in minutes - simple, quick and homely.",
+    "mrp": "₹150"
   },
   {
     "title": "Plain Idli Premix",
@@ -290,7 +336,8 @@ const products = [
     "pack": "200 g / 500 g",
     "image": "assets/products/plain-idli-premix.jpg",
     "tag": "Soft & Fluffy",
-    "description": "Quick and easy premix for soft, fluffy homemade idlis."
+    "description": "Quick and easy premix for soft, fluffy homemade idlis.",
+    "mrp": "₹150"
   },
   {
     "title": "Millet Pancake Chocolate",
@@ -298,7 +345,8 @@ const products = [
     "pack": "200 g / 500 g",
     "image": "assets/products/millet-pancake-chocolate.jpg",
     "tag": "Chocolate",
-    "description": "Oats and ragi goodness in a delicious chocolate pancake mix."
+    "description": "Oats and ragi goodness in a delicious chocolate pancake mix.",
+    "mrp": "₹180"
   },
   {
     "title": "Millet Pancake Valilla",
@@ -306,7 +354,8 @@ const products = [
     "pack": "200 g / 500 g",
     "image": "assets/products/millet-pancake-valilla.jpg",
     "tag": "Vanilla",
-    "description": "Oats and jowar goodness in a soft, wholesome vanilla pancake mix."
+    "description": "Oats and jowar goodness in a soft, wholesome vanilla pancake mix.",
+    "mrp": "₹180"
   },
   {
     "title": "Millet Pancake Mango",
@@ -314,7 +363,8 @@ const products = [
     "pack": "200 g / 500 g",
     "image": "assets/products/millet-pancake-mango.jpg",
     "tag": "Mango",
-    "description": "Our first mango pancake mix - made with sprouted millets."
+    "description": "Our first mango pancake mix - made with sprouted millets.",
+    "mrp": "₹180"
   },
   {
     "title": "Khapali Ata (Emmer Wheat)",
@@ -322,7 +372,8 @@ const products = [
     "pack": "1 kg / 5 kg",
     "image": "assets/products/khapali-ata-emmer-wheat.jpg",
     "tag": "Ancient Grain",
-    "description": "Stone-ground ancient emmer wheat flour for soft, nutritious rotis."
+    "description": "Stone-ground ancient emmer wheat flour for soft, nutritious rotis.",
+    "mrp": "₹250"
   },
   {
     "title": "10 Grains Khapali-Millet Ata",
@@ -330,7 +381,8 @@ const products = [
     "pack": "1 kg / 5 kg",
     "image": "assets/products/10-grains-khapali-millet-ata.jpg",
     "tag": "Multi-Grain",
-    "description": "Khapali blended with nutrient-rich millets and supergrains."
+    "description": "Khapali blended with nutrient-rich millets and supergrains.",
+    "mrp": "₹250"
   },
   {
     "title": "Nuts & Seeds Chocolate Milk Blend",
@@ -338,7 +390,8 @@ const products = [
     "pack": "200 g",
     "image": "assets/products/nuts-seeds-chocolate-milk-blend.jpg",
     "tag": "Nutrition-Packed",
-    "description": "Packed with REAL dry fruits, nuts and seeds - no compromise on daily nutrition-packed goodness."
+    "description": "Packed with REAL dry fruits, nuts and seeds - no compromise on daily nutrition-packed goodness.",
+    "mrp": "₹280"
   },
   {
     "title": "Channa and Jau Sattu Drink",
@@ -346,7 +399,8 @@ const products = [
     "pack": "250 g",
     "image": "assets/products/channa-and-jau-sattu-drink.jpg",
     "tag": "Summer Cooler",
-    "description": "Summer coolers, chill your ❤️."
+    "description": "Summer coolers, chill your ❤️.",
+    "mrp": "₹180"
   },
   {
     "title": "Sambar Powder",
@@ -354,7 +408,8 @@ const products = [
     "pack": "100 g",
     "image": "assets/products/sambar-powder.jpg",
     "tag": "Freshly Ground",
-    "description": "Traditional recipe, bold spice blend and freshly ground aroma."
+    "description": "Traditional recipe, bold spice blend and freshly ground aroma.",
+    "mrp": "₹120"
   },
   {
     "title": "Idli/Dosa Podi",
@@ -362,7 +417,8 @@ const products = [
     "pack": "100 g",
     "image": "assets/products/idli-dosa-podi.jpg",
     "tag": "Spice Blend",
-    "description": "Traditional South Indian spice blend for idli, dosa and rice."
+    "description": "Traditional South Indian spice blend for idli, dosa and rice.",
+    "mrp": "₹120"
   },
   {
     "title": "Diet Mix (Mixture)",
@@ -370,7 +426,8 @@ const products = [
     "pack": "165 g",
     "image": "assets/products/diet-mix-mixture.jpg",
     "tag": "Guilt-Free Snacking",
-    "description": "Packed with real dry fruits and peanuts - for your guilt-free snacking."
+    "description": "Packed with real dry fruits and peanuts - for your guilt-free snacking.",
+    "mrp": "₹160"
   },
   {
     "title": "Laddu Varieties",
@@ -378,7 +435,8 @@ const products = [
     "pack": "250 g / 500 g",
     "image": "assets/products/laddu-varieties.jpg",
     "tag": "Homemade Sweets",
-    "description": "Besan-dryfruit, Atta-Gond, Chana-Makhana-Dryfruit, Nuts&Seeds, Methi-Dryfruit, Khoya-Nariyal-Dryfruit."
+    "description": "Besan-dryfruit, Atta-Gond, Chana-Makhana-Dryfruit, Nuts&Seeds, Methi-Dryfruit, Khoya-Nariyal-Dryfruit.",
+    "mrp": "₹280"
   },
   {
     "title": "Mathri Varieties",
@@ -386,7 +444,8 @@ const products = [
     "pack": "250 g / 500 g",
     "image": "assets/products/mathri-varieties.jpg",
     "tag": "Chai-Time Snack",
-    "description": "India favourite chai time snack - Atta, Maida-Suji, beetroot-spinch (red, green marbling)."
+    "description": "India favourite chai time snack - Atta, Maida-Suji, beetroot-spinch (red, green marbling).",
+    "mrp": "₹220"
   },
   {
     "title": "Crispy Namakpare",
@@ -394,7 +453,8 @@ const products = [
     "pack": "250 g / 500 g",
     "image": "assets/products/crispy-namakpare.jpg",
     "tag": "Crispy Snack",
-    "description": "Traditional homemade crispy namakpare for anytime snacking."
+    "description": "Traditional homemade crispy namakpare for anytime snacking.",
+    "mrp": "₹180"
   }
 ];
 const phone = "918588825220";
@@ -416,7 +476,7 @@ function highlightDescription(text) {
     .replace(/Saraswati’s special/g, '<span class="desc-special">Saraswati’s special</span>');
 }
 function orderLink(product) {
-  const message = `Hello Parvati ji, I want to enquire about: ${product.title}. Available pack: ${product.pack}. Please confirm price and availability.`;
+  const message = `Hello Parvati ji, I want to enquire about: ${product.title}. Available pack: ${product.pack}. MRP: ${product.mrp}. Please share the best available offer and availability.`;
   return `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
 }
 function renderFilters() {
@@ -437,6 +497,7 @@ function renderProducts() {
       <div class="product-body">
         <h4>${product.title}</h4>
         <div class="meta"><span>${product.pack}</span><span>${product.tag}</span></div>
+        <div class="price-row">${product.mrp ? `<span class="mrp-pill">MRP <strong>${product.mrp}</strong></span>` : ``}</div>
         <p>${highlightDescription(product.description)}</p>
         <div class="product-actions">
           <a class="whatsapp" href="${orderLink(product)}" target="_blank" rel="noopener"><span class="wa-icon">${whatsappIcon}</span> Enquire</a>
