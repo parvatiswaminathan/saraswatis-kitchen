@@ -102,9 +102,17 @@
 
 
 
-    .certs{display:flex; gap:14px; flex-wrap:wrap; align-items:center; margin-top:18px}
-    .certs img{max-width:260px; height:auto}
-    .gst-badge{background:#fffaf3; border:2px solid var(--green); border-radius:20px; padding:16px 18px; color:var(--green); font-weight:900}
+    .certs{display:flex; gap:16px; flex-wrap:wrap; align-items:stretch; margin-top:18px}
+    .cert-card{display:flex; align-items:center; gap:16px; background:#ece7dc; border:2px solid rgba(6,77,54,.32); border-radius:26px; padding:14px 18px; min-height:120px; box-shadow:0 8px 18px rgba(44,26,17,.06)}
+    .cert-card-fssai{min-width:min(100%, 500px); flex:1.15}
+    .cert-card-gst{min-width:min(100%, 260px); flex:.85; justify-content:center; align-items:flex-start; flex-direction:column}
+    .cert-logo-box{width:96px; height:78px; background:#fff; display:flex; align-items:center; justify-content:center; border-radius:0; flex:0 0 auto}
+    .cert-logo-box img{max-width:86px; max-height:64px; object-fit:contain}
+    .cert-copy{display:flex; flex-direction:column; justify-content:center}
+    .cert-label{font-size:14px; line-height:1.15; letter-spacing:.03em; font-weight:900; color:#7b6456; text-transform:uppercase}
+    .cert-number{font-size:16px; line-height:1.25; font-weight:1000; color:var(--green)}
+    .cert-number.fssai-no{font-size:17px}
+    @media (max-width:640px){.cert-card{width:100%}.cert-card-fssai,.cert-card-gst{min-width:100%}}
 
     .exclusive-discount-line{position:absolute; left:50%; bottom:16px; transform:translateX(-50%); z-index:3; white-space:nowrap; text-align:center; font-weight:1000; font-size:clamp(16px,1.9vw,24px); color:#a40019; background:linear-gradient(135deg, rgba(255,250,243,.98), rgba(255,236,210,.98)); border:3px solid rgba(164,0,25,.34); border-radius:999px; padding:12px 22px; box-shadow:0 14px 34px rgba(164,0,25,.26); animation:discountBlink 1.05s ease-in-out infinite; letter-spacing:.02em; text-transform:none}
     @keyframes discountBlink{0%,100%{opacity:1; transform:translateX(-50%) scale(1)}50%{opacity:.28; transform:translateX(-50%) scale(1.03)}}
@@ -221,8 +229,17 @@
               </div>
             </div>
             <div class="certs">
-              <img src="assets/brand/fssai-badge.png" alt="FSSAI license 12725055000859" />
-              <div class="gst-badge">GST<br>09ARNPS6687D1Z0</div>
+              <div class="cert-card cert-card-fssai">
+                <div class="cert-logo-box"><img src="assets/brand/fssai-logo.png" alt="FSSAI logo" /></div>
+                <div class="cert-copy">
+                  <div class="cert-label">FSSAI LICENSED</div>
+                  <div class="cert-number fssai-no">Lic. No. 12725055000859</div>
+                </div>
+              </div>
+              <div class="cert-card cert-card-gst">
+                <div class="cert-label">GSTIN</div>
+                <div class="cert-number">09ARNPS6687D1Z0</div>
+              </div>
             </div>
           </div>
           <div>
