@@ -55,10 +55,11 @@
  .product-body h4{margin:0; color:var(--green); font-size:18px; line-height:1.14}
  .meta{display:flex; flex-wrap:wrap; gap:7px}
  .meta span{background:rgba(6,77,54,.08); color:var(--green); border-radius:999px; padding:5px 8px; font-weight:900; font-size:11px}
- .price-row{display:flex; flex-wrap:wrap; gap:8px; align-items:center; margin-top:2px}
- .mrp-pill{display:inline-flex; align-items:center; gap:6px; background:linear-gradient(180deg, #f7e9d2 0%, #f2ddbf 100%); color:#7d4d21; border:1.5px solid #d9b78a; border-radius:999px; padding:7px 12px; font-weight:1000; font-size:13px; box-shadow:inset 0 1px 0 rgba(255,255,255,.75), 0 4px 10px rgba(125,77,33,.08)}
- .mrp-pill strong{font-size:14px; color:#7d4d21}
- .price-enquire{color:var(--green); background:linear-gradient(180deg, #fff5df 0%, #f1d59f 100%); border-color:#d1a64d; font-size:13px; letter-spacing:.01em}
+ .price-row{display:flex; flex-direction:column; gap:3px; align-items:flex-start; margin-top:-2px}
+ .pack-mrp-line{display:flex; align-items:center; gap:7px; line-height:1.2}
+ .pack-tag{background:rgba(6,77,54,.08); color:var(--green); border-radius:999px; padding:5px 8px; font-weight:900; font-size:11px; white-space:nowrap}
+ .mrp-text{color:var(--green); font-weight:900; font-size:11px; white-space:nowrap}
+ .price-enquire{display:inline-flex; align-items:center; color:var(--green); background:linear-gradient(180deg, #fff5df 0%, #f1d59f 100%); border:1.5px solid #d1a64d; border-radius:999px; padding:7px 12px; font-size:13px; font-weight:1000; letter-spacing:.01em}
  .desc-special{display:inline-block; color:#a64f19; font-family:Georgia,"Times New Roman",serif; font-style:italic; font-weight:1000; background:linear-gradient(180deg, #f7e9d2 0%, #f2ddbf 100%); border:1.5px solid #d9b78a; border-radius:999px; padding:3px 12px; box-shadow:inset 0 1px 0 rgba(255,255,255,.75), 0 4px 10px rgba(125,77,33,.08); white-space:nowrap; animation:specialBlink 1.15s ease-in-out infinite}
  @keyframes specialBlink{0%,100%{opacity:1; transform:scale(1); box-shadow:inset 0 1px 0 rgba(255,255,255,.75), 0 4px 10px rgba(125,77,33,.08)}50%{opacity:.42; transform:scale(1.04); box-shadow:inset 0 1px 0 rgba(255,255,255,.75), 0 0 0 3px rgba(214,126,47,.10), 0 8px 20px rgba(214,126,47,.22)}}
  .product-body p{margin:0; line-height:1.5; color:rgba(59,32,26,.8); font-size:13.5px}
@@ -280,195 +281,195 @@
 </footer>
 <script>
 const products = [
- {
- "title": "Sprouted Ragi Dosa Premix",
- "category": "Wholesome Millet Premixes",
- "pack": "200 g / 500 g",
- "image": "assets/products/sprouted-ragi-dosa-premix.jpg",
- "tag": "Best Seller",
- "description": "Best Seller - sprouted ragi goodness for quick, wholesome dosas.",
- "mrp": "₹150"
- },
- {
- "title": "Rolled Oats Dosa Premix",
- "category": "Wholesome Millet Premixes",
- "pack": "200 g / 500 g",
- "image": "assets/products/rolled-oats-dosa-premix.jpg",
- "tag": "Best Seller",
- "description": "Best Seller - hearty rolled oats premix for light, crisp dosas.",
- "mrp": "₹150"
- },
- {
- "title": "Soyabean Dosa Premix",
- "category": "Wholesome Millet Premixes",
- "pack": "200 g / 500 g",
- "image": "assets/products/soyabean-dosa-premix.jpg",
- "tag": "Protein-Rich",
- "description": "Unbelievably tasty and protein-rich, made for everyday dosa cravings.",
- "mrp": "₹150"
- },
- {
- "title": "Jowar Dosa Premix",
- "category": "Wholesome Millet Premixes",
- "pack": "200 g / 500 g",
- "image": "assets/products/jowar-dosa-premix.jpg",
- "tag": "Millet Blend",
- "description": "Nutritious jowar millet blend for easy, healthy dosas.",
- "mrp": "₹150"
- },
- {
- "title": "Adai Multi Grain Premix",
- "category": "Wholesome Millet Premixes",
- "pack": "200 g / 500 g",
- "image": "assets/products/adai-multi-grain-premix.jpg",
- "tag": "Must Try",
- "description": "Saraswati's special - a hearty multi-grain premix and a must try.",
- "mrp": "₹150"
- },
- {
- "title": "Bajra Dosa Premix",
- "category": "Wholesome Millet Premixes",
- "pack": "200 g / 500 g",
- "image": "assets/products/bajra-dosa-premix.jpg",
- "tag": "Bajra Goodness",
- "description": "Nutritious bajra premix for crisp, comforting homemade dosas.",
- "mrp": "₹150"
- },
- {
- "title": "Plain Dosa Premix",
- "category": "Wholesome Millet Premixes",
- "pack": "200 g / 500 g",
- "image": "assets/products/plain-dosa-premix.jpg",
- "tag": "Instant Mix",
- "description": "Make delicious crisp dosas in minutes - simple, quick and homely.",
- "mrp": "₹150"
- },
- {
- "title": "Plain Idli Premix",
- "category": "Wholesome Millet Premixes",
- "pack": "200 g / 500 g",
- "image": "assets/products/plain-idli-premix.jpg",
- "tag": "Soft & Fluffy",
- "description": "Quick and easy premix for soft, fluffy homemade idlis.",
- "mrp": "₹150"
- },
- {
- "title": "Millet Pancake Chocolate",
- "category": "Millet Pancakes",
- "pack": "200 g / 500 g",
- "image": "assets/products/millet-pancake-chocolate.jpg",
- "tag": "Chocolate",
- "description": "Oats and ragi goodness in a delicious chocolate pancake mix.",
- "mrp": "₹180"
- },
- {
- "title": "Millet Pancake Valilla",
- "category": "Millet Pancakes",
- "pack": "200 g / 500 g",
- "image": "assets/products/millet-pancake-valilla.jpg",
- "tag": "Vanilla",
- "description": "Oats and jowar goodness in a soft, wholesome vanilla pancake mix.",
- "mrp": "₹180"
- },
- {
- "title": "Millet Pancake Mango",
- "category": "Millet Pancakes",
- "pack": "200 g / 500 g",
- "image": "assets/products/millet-pancake-mango.jpg",
- "tag": "Mango",
- "description": "Our first mango pancake mix - made with sprouted millets.",
- "mrp": "₹180"
- },
- {
- "title": "Khapali Ata (Emmer Wheat)",
- "category": "Diabetic Friendly Low GI Atta",
- "pack": "1 kg / 5 kg",
- "image": "assets/products/khapali-ata-emmer-wheat.jpg",
- "tag": "Ancient Grain",
- "description": "Stone-ground ancient emmer wheat flour for soft, nutritious rotis.",
- "mrp": "₹250"
- },
- {
- "title": "10 Grains Khapali-Millet Ata",
- "category": "Diabetic Friendly Low GI Atta",
- "pack": "1 kg / 5 kg",
- "image": "assets/products/10-grains-khapali-millet-ata.jpg",
- "tag": "Multi-Grain",
- "description": "Khapali blended with nutrient-rich millets and supergrains.",
- "mrp": "₹250"
- },
- {
- "title": "Nuts & Seeds Chocolate Milk Blend",
- "category": "Nutritious Drink Blends",
- "pack": "200 g",
- "image": "assets/products/nuts-seeds-chocolate-milk-blend.jpg",
- "tag": "Nutrition-Packed",
- "description": "Packed with REAL dry fruits, nuts and seeds - no compromise on daily nutrition-packed goodness.",
- "mrp": "₹280"
- },
- {
- "title": "Channa and Jau Sattu Drink",
- "category": "Nutritious Drink Blends",
- "pack": "250 g",
- "image": "assets/products/channa-and-jau-sattu-drink.jpg",
- "tag": "Summer Cooler",
- "description": "Summer coolers, chill your ❤️.",
- "mrp": "₹180"
- },
- {
- "title": "Sambar Powder",
- "category": "Traditional South Indian Spice Blends",
- "pack": "100 g",
- "image": "assets/products/sambar-powder.jpg",
- "tag": "Freshly Ground",
- "description": "Traditional recipe, bold spice blend and freshly ground aroma.",
- "mrp": "₹120"
- },
- {
- "title": "Idli/Dosa Podi",
- "category": "Traditional South Indian Spice Blends",
- "pack": "100 g",
- "image": "assets/products/idli-dosa-podi.jpg",
- "tag": "Spice Blend",
- "description": "Traditional South Indian spice blend for idli, dosa and rice.",
- "mrp": "₹120"
- },
- {
- "title": "Diet Mix (Mixture)",
- "category": "Diet Mix",
- "pack": "165 g",
- "image": "assets/products/diet-mix-mixture.jpg",
- "tag": "Guilt-Free Snacking",
- "description": "Packed with real dry fruits and peanuts - for your guilt-free snacking.",
- "priceNote": "Please enquire for price"
- },
- {
- "title": "Laddu Varieties",
- "category": "Traditional Homemade Snacks & Sweets",
- "pack": "250 g / 500 g",
- "image": "assets/products/laddu-varieties.jpg",
- "tag": "Homemade Sweets",
- "description": "Besan-dryfruit, Atta-Gond, Chana-Makhana-Dryfruit, Nuts&Seeds, Methi-Dryfruit, Khoya-Nariyal-Dryfruit.",
- "priceNote": "Please enquire for price"
- },
- {
- "title": "Mathri Varieties",
- "category": "Traditional Homemade Snacks & Sweets",
- "pack": "250 g / 500 g",
- "image": "assets/products/mathri-varieties.jpg",
- "tag": "Chai-Time Snack",
- "description": "India's favorite chai time snack - Atta, Maida-Suji, beetroot-spinach (red, green marbling).",
- "priceNote": "Please enquire for price"
- },
- {
- "title": "Crispy Namakpare",
- "category": "Traditional Homemade Snacks & Sweets",
- "pack": "250 g / 500 g",
- "image": "assets/products/crispy-namakpare.jpg",
- "tag": "Crispy Snack",
- "description": "Traditional homemade crispy namakpare for anytime snacking.",
- "priceNote": "Please enquire for price"
- }
+  {
+    "title": "Sprouted Ragi Dosa Premix",
+    "category": "Wholesome Millet Premixes (Gluten-Free)",
+    "pack": "200 g / 500 g",
+    "image": "assets/products/sprouted-ragi-dosa-premix.jpg",
+    "tag": "Best Seller",
+    "description": "Best Seller - sprouted ragi goodness for quick, wholesome dosas.",
+    "mrp": "₹150 / ₹375"
+  },
+  {
+    "title": "Rolled Oats Dosa Premix",
+    "category": "Wholesome Millet Premixes (Gluten-Free)",
+    "pack": "200 g / 500 g",
+    "image": "assets/products/rolled-oats-dosa-premix.jpg",
+    "tag": "Best Seller",
+    "description": "Best Seller - hearty rolled oats premix for light, crisp dosas.",
+    "mrp": "₹150 / ₹375"
+  },
+  {
+    "title": "Soyabean Dosa Premix",
+    "category": "Wholesome Millet Premixes (Gluten-Free)",
+    "pack": "200 g / 500 g",
+    "image": "assets/products/soyabean-dosa-premix.jpg",
+    "tag": "Protein-Rich",
+    "description": "Unbelievably tasty and protein-rich, made for everyday dosa cravings.",
+    "mrp": "₹150 / ₹375"
+  },
+  {
+    "title": "Jowar Dosa Premix",
+    "category": "Wholesome Millet Premixes (Gluten-Free)",
+    "pack": "200 g / 500 g",
+    "image": "assets/products/jowar-dosa-premix.jpg",
+    "tag": "Millet Blend",
+    "description": "Nutritious jowar millet blend for easy, healthy dosas.",
+    "mrp": "₹150 / ₹375"
+  },
+  {
+    "title": "Adai Multi Grain Premix",
+    "category": "Wholesome Millet Premixes (Gluten-Free)",
+    "pack": "200 g / 500 g",
+    "image": "assets/products/adai-multi-grain-premix.jpg",
+    "tag": "Must Try",
+    "description": "Saraswati's special - a hearty multi-grain premix and a must try.",
+    "mrp": "₹150 / ₹375"
+  },
+  {
+    "title": "Bajra Dosa Premix",
+    "category": "Wholesome Millet Premixes (Gluten-Free)",
+    "pack": "200 g / 500 g",
+    "image": "assets/products/bajra-dosa-premix.jpg",
+    "tag": "Bajra Goodness",
+    "description": "Nutritious bajra premix for crisp, comforting homemade dosas.",
+    "mrp": "₹150 / ₹375"
+  },
+  {
+    "title": "Plain Dosa Premix",
+    "category": "Wholesome Millet Premixes (Gluten-Free)",
+    "pack": "200 g / 500 g",
+    "image": "assets/products/plain-dosa-premix.jpg",
+    "tag": "Instant Mix",
+    "description": "Make delicious crisp dosas in minutes - simple, quick and homely.",
+    "mrp": "₹150 / ₹375"
+  },
+  {
+    "title": "Plain Idli Premix",
+    "category": "Wholesome Millet Premixes (Gluten-Free)",
+    "pack": "200 g / 500 g",
+    "image": "assets/products/plain-idli-premix.jpg",
+    "tag": "Soft & Fluffy",
+    "description": "Quick and easy premix for soft, fluffy homemade idlis.",
+    "mrp": "₹150 / ₹375"
+  },
+  {
+    "title": "Millet Pancake Chocolate",
+    "category": "Millet Pancakes (Gluten-Free)",
+    "pack": "200 g / 500 g",
+    "image": "assets/products/millet-pancake-chocolate.jpg",
+    "tag": "Chocolate",
+    "description": "Oats and ragi goodness in a delicious chocolate pancake mix.",
+    "mrp": "₹180 / ₹430"
+  },
+  {
+    "title": "Millet Pancake Vanilla",
+    "category": "Millet Pancakes (Gluten-Free)",
+    "pack": "200 g / 500 g",
+    "image": "assets/products/millet-pancake-valilla.jpg",
+    "tag": "Vanilla",
+    "description": "Oats and jowar goodness in a soft, wholesome vanilla pancake mix.",
+    "mrp": "₹180 / ₹430"
+  },
+  {
+    "title": "Millet Pancake Mango",
+    "category": "Millet Pancakes (Gluten-Free)",
+    "pack": "200 g / 500 g",
+    "image": "assets/products/millet-pancake-mango.jpg",
+    "tag": "Mango",
+    "description": "Our first mango pancake mix - made with sprouted millets.",
+    "mrp": "₹180 / ₹430"
+  },
+  {
+    "title": "Khapli Atta (Emmer Wheat)",
+    "category": "Diabetic-Friendly Low GI Atta",
+    "pack": "1 kg / 5 kg",
+    "image": "assets/products/khapali-ata-emmer-wheat.jpg",
+    "tag": "Ancient Grain",
+    "description": "Stone-ground ancient emmer wheat flour for soft, nutritious rotis.",
+    "mrp": "₹250 / ₹1200"
+  },
+  {
+    "title": "10-Grain Khapli-Millet Atta",
+    "category": "Diabetic-Friendly Low GI Atta",
+    "pack": "1 kg / 5 kg",
+    "image": "assets/products/10-grains-khapali-millet-ata.jpg",
+    "tag": "Multi-Grain",
+    "description": "Khapali blended with nutrient-rich millets and supergrains.",
+    "mrp": "₹250 / ₹1200"
+  },
+  {
+    "title": "Nuts & Seeds Chocolate Milk Blend",
+    "category": "Nutritious Drink Blends",
+    "pack": "200 g / 500 g",
+    "image": "assets/products/nuts-seeds-chocolate-milk-blend.jpg",
+    "tag": "Nutrition-Packed",
+    "description": "Packed with REAL dry fruits, nuts and seeds - no compromise on daily nutrition-packed goodness.",
+    "mrp": "₹280 / ₹650"
+  },
+  {
+    "title": "Chana and Jau Sattu Drink",
+    "category": "Nutritious Drink Blends",
+    "pack": "250 g",
+    "image": "assets/products/channa-and-jau-sattu-drink.jpg",
+    "tag": "Summer Cooler",
+    "description": "Summer cooler - chill your ❤️.",
+    "mrp": "₹120"
+  },
+  {
+    "title": "Sambar Powder",
+    "category": "Traditional South Indian Spice Blends",
+    "pack": "100 g",
+    "image": "assets/products/sambar-powder.jpg",
+    "tag": "Freshly Ground",
+    "description": "Traditional recipe, bold spice blend and freshly ground aroma.",
+    "mrp": "₹120"
+  },
+  {
+    "title": "Idli/Dosa Podi",
+    "category": "Traditional South Indian Spice Blends",
+    "pack": "100 g",
+    "image": "assets/products/idli-dosa-podi.jpg",
+    "tag": "Spice Blend",
+    "description": "Traditional South Indian spice blend for idli, dosa and rice.",
+    "mrp": "₹120"
+  },
+  {
+    "title": "Diet Mix (Mixture)",
+    "category": "Diet Mix",
+    "pack": "165 g",
+    "image": "assets/products/diet-mix-mixture.jpg",
+    "tag": "Guilt-Free Snacking",
+    "description": "Packed with real dry fruits and peanuts - for your guilt-free snacking.",
+    "priceNote": "Please enquire for price"
+  },
+  {
+    "title": "Laddu Varieties",
+    "category": "Traditional Homemade Snacks & Sweets",
+    "pack": "250 g / 500 g",
+    "image": "assets/products/laddu-varieties.jpg",
+    "tag": "Homemade Sweets",
+    "description": "Besan-dryfruit, Atta-Gond, Chana-Makhana-Dryfruit, Nuts&Seeds, Methi-Dryfruit, Khoya-Nariyal-Dryfruit.",
+    "priceNote": "Please enquire for price"
+  },
+  {
+    "title": "Mathri Varieties",
+    "category": "Traditional Homemade Snacks & Sweets",
+    "pack": "250 g / 500 g",
+    "image": "assets/products/mathri-varieties.jpg",
+    "tag": "Chai-Time Snack",
+    "description": "India’s favourite chai-time snack - Atta, Maida-Suji, beetroot-spinach (red and green marbling).",
+    "priceNote": "Please enquire for price"
+  },
+  {
+    "title": "Crispy Namakpare",
+    "category": "Traditional Homemade Snacks & Sweets",
+    "pack": "250 g / 500 g",
+    "image": "assets/products/crispy-namakpare.jpg",
+    "tag": "Crispy Snack",
+    "description": "Traditional homemade crispy namakpare for anytime snacking.",
+    "priceNote": "Please enquire for price"
+  }
 ];
 const phone = "918588825220";
 const whatsappIcon = `<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path fill="currentColor" d="M20.52 3.48A11.94 11.94 0 0 0 12.03 0C5.41 0 .03 5.37.03 11.99c0 2.11.55 4.18 1.59 6.01L0 24l6.16-1.61a11.94 11.94 0 0 0 5.87 1.5h.01c6.61 0 11.99-5.38 11.99-12a11.9 11.9 0 0 0-3.51-8.41Zm-8.48 18.38h-.01a9.95 9.95 0 0 1-5.08-1.39l-.36-.21-3.66.96.98-3.57-.23-.37a9.9 9.9 0 0 1-1.52-5.29c0-5.48 4.45-9.93 9.93-9.93 2.65 0 5.14 1.03 7.01 2.9a9.86 9.86 0 0 1 2.91 7.02c0 5.47-4.46 9.93-9.92 9.93Zm5.45-7.45c-.3-.15-1.77-.87-2.04-.96-.27-.1-.47-.15-.67.15-.2.3-.76.96-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.27-.47-2.42-1.51-.89-.79-1.49-1.76-1.66-2.06-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.67-1.61-.92-2.21-.24-.57-.48-.49-.67-.5h-.57c-.2 0-.52.07-.79.37-.27.3-1.05 1.02-1.05 2.49s1.08 2.88 1.23 3.08c.15.2 2.12 3.23 5.14 4.53.72.31 1.28.5 1.72.64.72.23 1.38.2 1.9.12.58-.09 1.77-.72 2.02-1.42.25-.69.25-1.29.17-1.42-.07-.12-.27-.2-.57-.35Z"/></svg>`;
@@ -491,6 +492,22 @@ function orderLink(product) {
  const message = `Hello Parvati ji, I want to enquire about: ${product.title}. Available pack: ${product.pack}. ${priceLine}. Please share the best available offer and availability.`;
  return `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
 }
+
+function renderPackMrpLines(product) {
+ if (product.priceNote) {
+   return `<span class="price-enquire">${product.priceNote}</span>`;
+ }
+ const packs = String(product.pack || '').split('/').map(part => part.trim()).filter(Boolean);
+ const mrps = String(product.mrp || '').split('/').map(part => part.trim()).filter(Boolean);
+ if (!packs.length && !mrps.length) return '';
+ const lineCount = Math.max(packs.length, mrps.length);
+ return Array.from({length: lineCount}).map((_, index) => {
+   const pack = packs[index] || packs[0] || '';
+   let mrp = mrps[index] || mrps[0] || '';
+   mrp = mrp.replace(/^MRP\s*/i, '').trim();
+   return `<div class="pack-mrp-line">${pack ? `<span class="pack-tag">${pack}</span>` : ''}${mrp ? `<span class="mrp-text">MRP ${mrp}</span>` : ''}</div>`;
+ }).join('');
+}
 function renderFilters() {
  filters.innerHTML = categories.map(cat => `<button class="filter-btn ${cat === activeCategory ? 'active' : ''}" data-category="${cat}">${cat}</button>`).join('');
  filters.querySelectorAll('button').forEach(btn => btn.addEventListener('click', () => {
@@ -508,8 +525,8 @@ function renderProducts() {
  </div>
  <div class="product-body">
  <h4>${product.title}</h4>
- <div class="meta"><span>${product.pack}</span><span>${product.tag}</span></div>
- <div class="price-row">${product.priceNote ? `<span class="mrp-pill price-enquire">${product.priceNote}</span>` : (product.mrp ? `<span class="mrp-pill">MRP <strong>${product.mrp}</strong></span>` : ``)}</div>
+ <div class="meta"><span>${product.tag}</span></div>
+ <div class="price-row">${renderPackMrpLines(product)}</div>
  <p>${highlightDescription(product.description)}</p>
  <div class="product-actions">
  <a class="whatsapp" href="${orderLink(product)}" target="_blank" rel="noopener"><span class="wa-icon">${whatsappIcon}</span> Enquire</a>
