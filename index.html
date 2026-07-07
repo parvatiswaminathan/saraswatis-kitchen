@@ -44,26 +44,48 @@
  .section-title{display:flex; justify-content:space-between; gap:20px; align-items:flex-end; margin-bottom:24px}
  .section-title h3{margin:0; color:var(--green); font-family:Georgia,"Times New Roman",serif; font-size:clamp(31px,4vw,50px); letter-spacing:-.03em}
  .section-title p{margin:10px 0 0; max-width:680px; line-height:1.65; color:rgba(59,32,26,.78)}
- .filters{display:flex; flex-wrap:wrap; gap:10px; margin-bottom:24px}
- .filter-btn{border:none; border-radius:999px; padding:10px 14px; cursor:pointer; background:rgba(255,250,243,.78); color:var(--green); font-weight:900; box-shadow:0 8px 20px rgba(44,26,17,.08)}
+ .filters{display:grid; grid-template-columns:repeat(5,minmax(0,1fr)); gap:10px; margin-bottom:24px}
+ .filter-btn{border:none; border-radius:999px; padding:10px 14px; min-height:44px; cursor:pointer; background:rgba(255,250,243,.78); color:var(--green); font-weight:900; font-size:13px; line-height:1.15; box-shadow:0 8px 20px rgba(44,26,17,.08)}
  .filter-btn.active{background:var(--green); color:var(--white)}
  .catalog-grid{display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:18px}
  .product-card{display:grid; grid-template-columns:.92fr 1.08fr; background:rgba(255,250,243,.95); border:1px solid rgba(59,32,26,.12); border-radius:var(--radius); overflow:hidden; box-shadow:var(--shadow); min-height:245px}
  .product-img-wrap{background:#efe1d2; padding:10px; display:flex; align-items:center; justify-content:center; min-height:245px; border-right:1px solid rgba(59,32,26,.08)}
  .product-img-wrap img{width:100%; aspect-ratio:3/4; object-fit:cover; border-radius:16px; box-shadow:0 10px 24px rgba(44,26,17,.12); background:#f5ecdf; cursor:zoom-in}
+ .product-card.twin-card{grid-column:span 2; grid-template-columns:1.18fr .82fr}
+ .twin-product-bubble{background:rgba(255,250,243,.72); border:1.5px solid rgba(6,77,54,.14); border-radius:18px; padding:10px; width:100%; display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:10px}
+ .twin-item{background:#fffaf3; border:1px solid rgba(59,32,26,.10); border-radius:15px; padding:8px; display:flex; flex-direction:column; align-items:center; gap:6px}
+ .twin-item img{width:100%; aspect-ratio:3/4; object-fit:cover; border-radius:12px; box-shadow:0 8px 18px rgba(44,26,17,.10); background:#f5ecdf; cursor:zoom-in}
+ .twin-item-title{color:var(--green); font-weight:1000; font-size:12px; line-height:1.15; text-align:center}
+ .twin-shared-note{display:inline-flex; align-items:center; color:var(--green); background:rgba(6,77,54,.08); border-radius:999px; padding:6px 9px; font-weight:900; font-size:11px; line-height:1.1; margin-top:2px}
  .product-body{padding:16px 16px 14px; display:flex; flex-direction:column; gap:9px}
  .product-body h4{margin:0; color:var(--green); font-size:18px; line-height:1.14}
  .meta{display:flex; flex-wrap:wrap; gap:7px}
  .meta span{background:rgba(6,77,54,.08); color:var(--green); border-radius:999px; padding:5px 8px; font-weight:900; font-size:11px}
  .price-row{display:flex; flex-direction:column; gap:3px; align-items:flex-start; margin-top:-2px}
- .pack-mrp-line{display:flex; align-items:center; gap:7px; line-height:1.2}
+ .pack-mrp-line{display:flex; align-items:center; gap:7px; line-height:1.2; flex-wrap:wrap}
  .pack-tag{background:rgba(6,77,54,.08); color:var(--green); border-radius:999px; padding:5px 8px; font-weight:900; font-size:11px; white-space:nowrap}
  .mrp-text{color:var(--green); font-weight:900; font-size:11px; white-space:nowrap}
+ .variant-name{background:rgba(201,149,47,.14); color:#7d4d21; border-radius:999px; padding:5px 8px; font-weight:900; font-size:11px; white-space:nowrap}
+ .product-note{color:rgba(59,32,26,.68); font-weight:900; font-size:11px; line-height:1.2; margin-top:1px}
  .price-enquire{display:inline-flex; align-items:center; color:var(--green); background:linear-gradient(180deg, #fff5df 0%, #f1d59f 100%); border:1.5px solid #d1a64d; border-radius:999px; padding:7px 12px; font-size:13px; font-weight:1000; letter-spacing:.01em}
  .desc-special{display:inline-block; color:#a64f19; font-family:Georgia,"Times New Roman",serif; font-style:italic; font-weight:1000; background:linear-gradient(180deg, #f7e9d2 0%, #f2ddbf 100%); border:1.5px solid #d9b78a; border-radius:999px; padding:3px 12px; box-shadow:inset 0 1px 0 rgba(255,255,255,.75), 0 4px 10px rgba(125,77,33,.08); white-space:nowrap; animation:specialBlink 1.15s ease-in-out infinite}
  @keyframes specialBlink{0%,100%{opacity:1; transform:scale(1); box-shadow:inset 0 1px 0 rgba(255,255,255,.75), 0 4px 10px rgba(125,77,33,.08)}50%{opacity:.42; transform:scale(1.04); box-shadow:inset 0 1px 0 rgba(255,255,255,.75), 0 0 0 3px rgba(214,126,47,.10), 0 8px 20px rgba(214,126,47,.22)}}
  .product-body p{margin:0; line-height:1.5; color:rgba(59,32,26,.8); font-size:13.5px}
  .desc-highlight{color:var(--gold); font-family:Georgia,"Times New Roman",serif; font-style:italic; font-weight:900; background:rgba(201,149,47,.12); padding:1px 5px; border-radius:999px; white-space:nowrap}
+
+ .twin-card{grid-column:span 2; display:block; padding:10px}
+ .twin-product-shell{background:rgba(255,250,243,.96); border:1.5px solid rgba(6,77,54,.18); border-radius:22px; padding:10px; box-shadow:var(--shadow)}
+ .twin-list{display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:12px}
+ .twin-product-unit{display:grid; grid-template-columns:.92fr 1.08fr; gap:10px; align-items:center; background:#fffaf3; border:1px solid rgba(59,32,26,.12); border-radius:18px; padding:10px}
+ .twin-img-wrap{background:#efe1d2; border-radius:14px; padding:8px; display:flex; align-items:center; justify-content:center}
+ .twin-img-wrap img{width:100%; aspect-ratio:3/4; object-fit:cover; border-radius:12px; box-shadow:0 8px 18px rgba(44,26,17,.10); background:#f5ecdf; cursor:zoom-in}
+ .twin-info h4{margin:0 0 8px; color:var(--green); font-size:18px; line-height:1.14}
+ .fresh-highlight{display:inline-flex; color:#a40019; background:linear-gradient(135deg, rgba(255,250,243,.99), rgba(255,236,210,.99)); border:2px solid rgba(164,0,25,.36); border-radius:999px; padding:7px 10px; font-weight:1000; font-size:12px; line-height:1.15; box-shadow:0 10px 24px rgba(164,0,25,.18); animation:freshBlink 1s ease-in-out infinite; margin-top:7px}
+ @keyframes freshBlink{0%,100%{opacity:1; transform:scale(1)}50%{opacity:.42; transform:scale(1.025)}}
+ .twin-bottom{display:flex; justify-content:space-between; align-items:center; gap:10px; flex-wrap:wrap; margin-top:10px}
+ .twin-shared-note{display:inline-flex; align-items:center; color:var(--green); background:rgba(6,77,54,.08); border-radius:999px; padding:7px 10px; font-weight:900; font-size:12px; line-height:1.1}
+ .twin-bottom .whatsapp{padding:9px 12px; font-size:13px}
+
  .product-actions{display:flex; gap:8px; flex-wrap:wrap; margin-top:auto; padding-top:4px}
  .product-actions .whatsapp{padding:9px 10px; font-size:13px}
  .view-link{border:none; background:transparent; color:var(--green); font-weight:900; cursor:pointer; padding:7px 0; text-decoration:underline; text-underline-offset:3px; font-size:12px}
@@ -120,9 +142,9 @@
  .modal-head{display:flex; justify-content:space-between; align-items:center; gap:14px; padding:12px 16px; border-bottom:1px solid rgba(59,32,26,.12)}
  .modal-head strong{color:var(--green)} .modal-head button{border:none; background:var(--green); color:white; border-radius:999px; padding:8px 12px; cursor:pointer}
  .modal-img{width:100%; max-height:82vh; object-fit:contain; display:block; background:#efe1d2}
- @media (max-width:1050px) {.catalog-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+ @media (max-width:1050px) {.catalog-grid{grid-template-columns:repeat(2,minmax(0,1fr))} .filters{grid-template-columns:repeat(3,minmax(0,1fr))} .twin-card{grid-column:span 2} .twin-product-unit{grid-template-columns:1fr}}
  @media (max-width:780px) {.nav{align-items:flex-start; flex-direction:column} .navlinks{justify-content:flex-start} .hero-card,.story-card,.contact-grid{grid-template-columns:1fr} .hero-visual{min-height:260px} .stats{grid-template-columns:1fr} .catalog-grid{grid-template-columns:1fr} .socials{grid-template-columns:1fr} .cert-combined-card{grid-template-columns:1fr}}
- @media (max-width:520px) {.wrap{width:min(100% - 24px, 1180px)} .product-card{grid-template-columns:1fr} .product-img-wrap{border-right:0; border-bottom:1px solid rgba(59,32,26,.08)} .exclusive-discount-line{font-size:12px; font-weight:1000; padding:9px 14px; bottom:10px;} .cert-unit{align-items:flex-start; flex-direction:column} .distributor-note{border-radius:22px}}
+ @media (max-width:520px) {.wrap{width:min(100% - 24px, 1180px)} .filters{grid-template-columns:repeat(2,minmax(0,1fr))} .filter-btn{font-size:13px; padding:9px 9px;} .twin-card{grid-column:span 1} .twin-list{grid-template-columns:1fr} .product-card{grid-template-columns:1fr} .product-img-wrap{border-right:0; border-bottom:1px solid rgba(59,32,26,.08)} .exclusive-discount-line{font-size:12px; font-weight:1000; padding:9px 14px; bottom:10px;} .cert-unit{align-items:flex-start; flex-direction:column} .distributor-note{border-radius:22px}}
  </style>
 </head>
 <body>
@@ -162,8 +184,8 @@
  <a class="outline-btn" href="#catalogue">View Catalogue</a>
  </div>
  <div class="stats">
- <div class="stat"><strong>21</strong><span>catalogue items</span></div>
- <div class="stat"><strong>7</strong><span>categories</span></div>
+ <div class="stat"><strong>23</strong><span>catalogue items</span></div>
+ <div class="stat"><strong>8</strong><span>categories</span></div>
  </div>
  </div>
  <div class="hero-visual">
@@ -469,6 +491,30 @@ const products = [
     "tag": "Crispy Snack",
     "description": "Traditional homemade crispy namakpare for anytime snacking.",
     "priceNote": "Please enquire for price"
+  },
+  {
+    "title": "Idli-Dosa Batter and Nariyal Chutney",
+    "category": "Fresh Batter & Nariyal Chutney",
+    "pack": "1 kg / 100 g",
+    "image": "assets/products/Idli-Dosa Batter.jpeg",
+    "tag": "",
+    "description": "Two fresh products listed separately under one shared delivery bubble.",
+    "variants": [
+      {
+        "name": "Idli-Dosa Batter",
+        "pack": "1 kg",
+        "mrp": "₹120",
+        "image": "assets/products/Idli-Dosa Batter.jpeg",
+        "highlight": "Fresh and Naturally Fermented (No added rising agents)"
+      },
+      {
+        "name": "Nariyal Chutney",
+        "pack": "100 g",
+        "mrp": "₹80",
+        "image": "assets/products/Nariyal Chutney.png"
+      }
+    ],
+    "note": "Delivery only in select pin codes"
   }
 ];
 const phone = "918588825220";
@@ -488,14 +534,18 @@ function highlightDescription(text) {
  .replace(/Saraswati’s special/g, '<span class="desc-special">Saraswati’s special</span>');
 }
 function orderLink(product) {
- const priceLine = product.priceNote ? `Price: ${product.priceNote}` : (product.mrp ? `MRP: ${product.mrp}` : 'Price: Please enquire');
- const message = `Hello Parvati ji, I want to enquire about: ${product.title}. Available pack: ${product.pack}. ${priceLine}. Please share the best available offer and availability.`;
+ const variantLine = product.variants ? product.variants.map(v => `${v.name}: ${v.pack}, MRP ${v.mrp}`).join('; ') : null;
+ const priceLine = product.priceNote ? `Price: ${product.priceNote}` : (variantLine ? variantLine : (product.mrp ? `MRP: ${product.mrp}` : 'Price: Please enquire'));
+ const message = `Hello Parvati ji, I want to enquire about: ${product.title}. ${priceLine}. Please share the best available offer and availability.`;
  return `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
 }
 
 function renderPackMrpLines(product) {
  if (product.priceNote) {
    return `<span class="price-enquire">${product.priceNote}</span>`;
+ }
+ if (product.variants) {
+   return '';
  }
  const packs = String(product.pack || '').split('/').map(part => part.trim()).filter(Boolean);
  const mrps = String(product.mrp || '').split('/').map(part => part.trim()).filter(Boolean);
@@ -516,16 +566,44 @@ function renderFilters() {
  renderProducts();
  }));
 }
+function renderTwinProduct(product) {
+ return `
+ <article class="product-card twin-card">
+   <div class="twin-product-shell">
+     <div class="twin-list">
+       ${product.variants.map(v => `
+         <div class="twin-product-unit">
+           <div class="twin-img-wrap">
+             <img src="${v.image}" alt="${v.name} catalogue image" loading="lazy" data-image="${v.image}" data-title="${v.name}" />
+           </div>
+           <div class="twin-info">
+             <h4>${v.name}</h4>
+             <div class="pack-mrp-line"><span class="pack-tag">${v.pack}</span><span class="mrp-text">MRP ${v.mrp}</span></div>
+             ${v.highlight ? `<div class="fresh-highlight">${v.highlight}</div>` : ``}
+           </div>
+         </div>
+       `).join('')}
+     </div>
+     <div class="twin-bottom">
+       <div class="twin-shared-note">${product.note || ''}</div>
+       <a class="whatsapp" href="${orderLink(product)}" target="_blank" rel="noopener"><span class="wa-icon">${whatsappIcon}</span> Enquire</a>
+     </div>
+   </div>
+ </article>`;
+}
+
 function renderProducts() {
  const visible = activeCategory === "All" ? products : products.filter(p => p.category === activeCategory);
- grid.innerHTML = visible.map(product => `
+ grid.innerHTML = visible.map(product => {
+   if (product.variants) return renderTwinProduct(product);
+   return `
  <article class="product-card">
  <div class="product-img-wrap">
  <img src="${product.image}" alt="${product.title} catalogue image" loading="lazy" data-image="${product.image}" data-title="${product.title}" />
  </div>
  <div class="product-body">
  <h4>${product.title}</h4>
- <div class="meta"><span>${product.tag}</span></div>
+ <div class="meta">${product.tag ? `<span>${product.tag}</span>` : ``}</div>
  <div class="price-row">${renderPackMrpLines(product)}</div>
  <p>${highlightDescription(product.description)}</p>
  <div class="product-actions">
@@ -533,9 +611,9 @@ function renderProducts() {
  <button class="view-link" type="button" data-image="${product.image}" data-title="${product.title}">View full image</button>
  </div>
  </div>
- </article>
- `).join('');
- grid.querySelectorAll('.view-link, .product-img-wrap img').forEach(btn => btn.addEventListener('click', () => {
+ </article>`;
+ }).join('');
+ grid.querySelectorAll('.view-link, .product-img-wrap img, .twin-img-wrap img').forEach(btn => btn.addEventListener('click', () => {
  modalImage.src = btn.dataset.image;
  modalTitle.textContent = btn.dataset.title;
  modal.showModal();
