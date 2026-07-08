@@ -145,6 +145,50 @@
  @media (max-width:1050px) {.catalog-grid{grid-template-columns:repeat(2,minmax(0,1fr))} .filters{grid-template-columns:repeat(3,minmax(0,1fr))} .twin-card{grid-column:span 2} .twin-product-unit{grid-template-columns:1fr}}
  @media (max-width:780px) {.nav{align-items:flex-start; flex-direction:column} .navlinks{justify-content:flex-start} .hero-card,.story-card,.contact-grid{grid-template-columns:1fr} .hero-visual{min-height:260px} .stats{grid-template-columns:1fr} .catalog-grid{grid-template-columns:1fr} .socials{grid-template-columns:1fr} .cert-combined-card{grid-template-columns:1fr}}
  @media (max-width:520px) {.wrap{width:min(100% - 24px, 1180px)} .filters{grid-template-columns:repeat(2,minmax(0,1fr))} .filter-btn{font-size:13px; padding:9px 9px;} .twin-card{grid-column:span 1} .twin-list{grid-template-columns:1fr} .product-card{grid-template-columns:1fr} .product-img-wrap{border-right:0; border-bottom:1px solid rgba(59,32,26,.08)} .exclusive-discount-line{font-size:12px; font-weight:1000; padding:9px 14px; bottom:10px;} .cert-unit{align-items:flex-start; flex-direction:column} .distributor-note{border-radius:22px}}
+
+ /* Mobile catalogue fix: stack cards as a normal list so the All view does not skip or leave gaps in phone browsers */
+ @media (max-width:780px) {
+   .catalog-grid{
+     display:flex!important;
+     flex-direction:column!important;
+     gap:18px!important;
+   }
+   .catalog-grid .product-card,
+   .catalog-grid .product-card.twin-card,
+   .catalog-grid .twin-card{
+     width:100%!important;
+     grid-column:auto!important;
+     margin:0!important;
+     min-height:auto!important;
+   }
+   .catalog-grid .product-card{
+     display:grid!important;
+     grid-template-columns:1fr!important;
+   }
+   .catalog-grid .product-card.twin-card,
+   .catalog-grid .twin-card{
+     display:block!important;
+     padding:0!important;
+   }
+   .product-img-wrap{
+     min-height:auto!important;
+     border-right:0!important;
+     border-bottom:1px solid rgba(59,32,26,.08)!important;
+   }
+   .product-img-wrap img,
+   .twin-img-wrap img{
+     display:block!important;
+     width:100%!important;
+     height:auto!important;
+   }
+   .twin-list{
+     grid-template-columns:1fr!important;
+   }
+   .twin-product-unit{
+     grid-template-columns:1fr!important;
+   }
+ }
+
  </style>
 </head>
 <body>
@@ -574,7 +618,7 @@ function renderTwinProduct(product) {
        ${product.variants.map(v => `
          <div class="twin-product-unit">
            <div class="twin-img-wrap">
-             <img src="${v.image}" alt="${v.name} catalogue image" loading="lazy" data-image="${v.image}" data-title="${v.name}" />
+             <img src="${v.image}" alt="${v.name} catalogue image" loading="lazy" sizes="(max-width:780px) 100vw, 33vw" data-image="${v.image}" data-title="${v.name}" />
            </div>
            <div class="twin-info">
              <h4>${v.name}</h4>
@@ -599,7 +643,7 @@ function renderProducts() {
    return `
  <article class="product-card">
  <div class="product-img-wrap">
- <img src="${product.image}" alt="${product.title} catalogue image" loading="lazy" data-image="${product.image}" data-title="${product.title}" />
+ <img src="${product.image}" alt="${product.title} catalogue image" loading="lazy" sizes="(max-width:780px) 100vw, 33vw" data-image="${product.image}" data-title="${product.title}" />
  </div>
  <div class="product-body">
  <h4>${product.title}</h4>
